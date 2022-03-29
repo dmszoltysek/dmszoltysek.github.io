@@ -1,1 +1,85 @@
-Hello World
+<!doctype html>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Batman</title>
+  <meta name="description" content="Dominik Szołtysek.">
+  <meta name="author" content="Dominik Szołtysek">
+
+  <meta property="og:title" content="Batman">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+<header>
+  <h2> Batman </h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li> <a onclick="loadDoc('Batman1')" style="cursor: pointer"> Batman - początek </a> </li>
+      <li> <a onclick="loadDoc('Batman2')" style="cursor: pointer"> Mroczny rycerz </a> </li>
+      <li> <a onclick="loadDoc('Batman3')" style="cursor: pointer"> Mroczny rycerz powstaje </a> </li>
+    </ul>
+    <div>
+      <form action="mailto:dm.szoltysek@gmail.com">
+        <label> Przywołaj Batmana </label>
+        <input type="text" id="fname" name="firstname" placeholder="Twoje imię">
+        <input type="text" id="sname" name="surname" placeholder="Twoje nazwisko">
+        <input type="submit" value="wyślij">
+      </form>
+    </div>
+  </nav>
+
+  <article id="batmobil" class="batmobil">
+    <img src="batmobil.jpg" alt="Batmobil">
+  </article>
+  <article id="Batman1" class="main">
+    <h3> Batman - początek </h3>
+    <img src="Batman-początek.jpg" alt="Batman - początek plakat">
+    <p>Historia milionera Bruce'a Wayne'a, który przemienia się w Batmana – postrach przestępców Gotham City. (za Filmweb)</p>
+  </article>
+
+  <article id="Batman2" class="main">
+    <h3> Mroczny rycerz </h3>
+    <img src="Mroczny%20rycerz.jpg" alt="Mroczny ryczerz plakat">
+    <p>Batman, z pomocą porucznika Gordona oraz prokuratora Harveya Denta, występuje przeciwko przerażającemu i nieobliczalnemu Jokerowi, który chce pogrążyć Gotham City w chaosie. (za Filmweb)</p>
+  </article>
+
+  <article id="Batman3" class="main">
+    <h3> Mroczny rycerz powstaje </h3>
+    <img src="MrocznyRyczerzPowstaje.jpg" alt="Mroczny ryczerz powstaje - plakat">
+    <p>Po ośmiu latach nieobecności Batman wraca, by uratować Gotham City przed zamaskowanym terrorystą Bane'em. (za Filmweb)</p>
+  </article>
+
+</section>
+<footer>
+  <p> Dominik Szołtysek </p>
+</footer>
+
+<script>
+  function loadDoc(page) {
+    let all = document.getElementsByClassName("main");
+    for (let el of all) {
+        el.style.display = "none"
+    }
+    all = document.getElementsByClassName("batmobil");
+    for (let el of all) {
+      el.style.display = "none"
+    }
+
+    let main = document.getElementById(page)
+    main.style.display = "block"
+  }
+</script>
+</body>
+</html>
